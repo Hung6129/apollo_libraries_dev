@@ -5,28 +5,57 @@ version: 1.2.0
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: '>=2.18.2 <3.0.0'
   flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  file_picker: ^5.2.1
+  cupertino_icons: ^1.0.2
+  google_fonts: ^3.0.1
+  settings_ui: ^2.0.2
+  flutter_slidable: ^2.0.0
+  auto_size_text: ^3.0.0
+  device_info_plus: ^8.0.0
+  lottie: ^2.0.0
+
+  get: ^4.6.5
+  provider: ^6.0.1
+
+  flutter_colorpicker: ^1.0.3
+
+  intl: ^0.17.0
+  shared_preferences: ^2.0.15
   flutter_reactive_ble: ^5.0.2
   permission_handler: ^10.1.0
-  device_info_plus: ^6.0.0
+  file_picker: ^5.2.1
+  loading_animation_widget: ^1.2.0+4
+  liquid_progress_indicator: ^0.4.0
+  
+  flutter_hooks: ^0.18.5+1
+  hooks_riverpod: ^2.1.1
+  file_saver: ^0.1.1
+  path_provider: ^2.0.11
 
   nordic_nrf_mesh:
     path: ../
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_driver:
-    sdk: flutter
-  test: any
   flutter_lints: ^2.0.1
+  json_serializable: ^6.5.3
+  build_runner: ^2.3.2
+  freezed: ^2.2.0
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/gif/
+
+    - assets/animations/empty.json
+    - assets/animations/loading.json
+    - assets/animations/data_not_found.json
+    - assets/animations/error.json
+    - assets/animations/small_error.json

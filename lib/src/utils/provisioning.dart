@@ -160,6 +160,7 @@ Future<ProvisionedMeshNode> _provisioning(
       final unprovisionedMeshNode =
           UnprovisionedMeshNode(event.meshNode!.uuid, event.meshNode!.provisionerPublicKeyXY!);
       final elementSize = await unprovisionedMeshNode.getNumberOfElements();
+      _log('Element size sau khi PROVISIONING_CAPABILITIES là ${elementSize.toString()}');
       if (elementSize == 0) {
         completer.completeError(NrfMeshProvisioningException(
             ProvisioningFailureCode.nodeComposition, 'Provisioning is failed. Module does not have any elements.'));
@@ -169,7 +170,9 @@ Future<ProvisionedMeshNode> _provisioning(
         var assigned = false;
         final meshnw = meshManagerApi.meshNetwork!;
         final maxAddress = await meshnw.highestAllocatableAddress;
+        _log('Hê điều hành android có ${maxAddress.toString()}');
         var unicast = await meshnw.nextAvailableUnicastAddress(elementSize);
+        _log('Unicast sau khi PROVISIONING_CAPABILITIES là ${unicast.toString()}');
         while (!assigned && unicast < maxAddress && unicast > 0) {
           try {
             await meshnw.assignUnicastAddress(unicast);
@@ -262,6 +265,7 @@ Future<ProvisionedMeshNode> _provisioning(
     await bleMeshManager.refreshDeviceCache();
     await bleMeshManager.disconnect();
     _cancelProvisioningCallbackSubscription(bleMeshManager);
+    provisionedMeshNode.nodeName = deviceToProvision.name;
     _log('provisioning success !');
     return provisionedMeshNode;
   } catch (e) {
