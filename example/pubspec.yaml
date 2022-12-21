@@ -1,0 +1,32 @@
+name: nordic_nrf_mesh_example
+description: Demonstrates how to use the nordic_nrf_mesh plugin.
+version: 1.2.0
+
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+  flutter: ">=3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  file_picker: ^5.2.1
+  flutter_reactive_ble: ^5.0.2
+  permission_handler: ^10.1.0
+  device_info_plus: ^6.0.0
+
+  nordic_nrf_mesh:
+    path: ../
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
+  flutter_lints: ^2.0.1
+
+flutter:
+  uses-material-design: true

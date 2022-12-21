@@ -1,0 +1,10 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - lib/**/*.g.dart
+    - lib/**/*.freezed.dart
+linter:
+  rules:
+    # futures should be either awaited or clearly marked as unawaited
+    - unawaited_futures

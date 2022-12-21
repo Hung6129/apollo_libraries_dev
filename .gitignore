@@ -1,0 +1,12 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+
+build/
+example/android/app/google-services.json
+.fvm
+*.iml
+
+/.idea/
